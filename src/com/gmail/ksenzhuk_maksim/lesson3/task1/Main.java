@@ -9,16 +9,19 @@ package com.gmail.ksenzhuk_maksim.lesson3.task1;
 
 public class Main {
     public static void main(String[] args) {
-        TimeInterval timeIntervalFirst = new TimeInterval(3723);
-        TimeInterval timeIntervalSecond = new TimeInterval(1,2,3);
-        TimeInterval timeIntervalThird = timeIntervalFirst;
+        TimeInterval timeIntervalFirst = new TimeInterval(3662);
+        TimeInterval timeIntervalSecond = new TimeInterval(54600);
+        TimeInterval timeIntervalThird = new TimeInterval(1,2,3);
+        TimeInterval timeIntervalFourth = timeIntervalSecond;
 
-        TimeInterval.compareInstance(timeIntervalFirst,timeIntervalSecond);
-        TimeInterval.compareInstance(timeIntervalFirst,timeIntervalThird);
+        timeIntervalFirst.equals(timeIntervalSecond);
+        timeIntervalSecond.equals(timeIntervalThird);
+        timeIntervalSecond.equals(timeIntervalFourth);
 
-        System.out.println("first interval data: " + timeIntervalFirst);
-        System.out.println("second interval data: " + timeIntervalSecond);
-        System.out.println("third interval data: " + timeIntervalThird);
+        System.out.println("time interval data: " + timeIntervalFirst);
+        System.out.println("first interval data: " + timeIntervalSecond);
+        System.out.println("second interval data: " + timeIntervalThird);
+        System.out.println("third interval data: " + timeIntervalFourth);
 
         /*Входные параметры в конструкторе для проверки
         - если значения < 0, переменным присваивается 0

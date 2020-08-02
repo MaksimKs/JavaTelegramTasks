@@ -9,11 +9,13 @@ public class TimeInterval {
         if (inputSeconds < 0) {
             return;
         }
-        this.seconds = inputSeconds;
+        this.seconds = inputSeconds % 60;
+        this.minutes = ((inputSeconds - this.seconds) / 60) % 60;
+        this.hours = ((inputSeconds - this.seconds) / 60 - this.minutes) / 60;
     }
 
     TimeInterval (long inputHours, long inputMinutes, long inputSeconds) {
-        if(inputSeconds < 0 || inputMinutes < 0 || inputHours < 0) {
+        if(inputHours < 0 || inputMinutes < 0 || inputSeconds < 0) {
             return;
         }
         this.hours = inputHours;
@@ -32,7 +34,7 @@ public class TimeInterval {
     }
 
     public void setMinutes(long minutes) {
-        if (hours < 0) {
+        if (minutes < 0) {
             this.minutes = 0;
         }
         this.minutes = minutes;
@@ -52,21 +54,18 @@ public class TimeInterval {
     }
 
     long getAmountOfSeconds() {
-        return (this.getSeconds() + (this.getMinutes() * 60) + (this.getHours()* 3600));
+        return this.getSeconds() + (this.getMinutes() * 60) + (this.getHours()* 3600);
     }
 
-    static void compareInstance (TimeInterval firstTimeInterval, TimeInterval secondTimeInterval) {
-        if (firstTimeInterval.equals(secondTimeInterval)) {
-            System.out.printf("Objects are the same\n" +
-                            "first object has %d seconds, second object has %d seconds\n\n",
-                    firstTimeInterval.getAmountOfSeconds(), secondTimeInterval.getAmountOfSeconds());
-        } else if (firstTimeInterval.getAmountOfSeconds() == secondTimeInterval.getAmountOfSeconds()) {
-            System.out.printf("Objects are different, but have same amount of seconds\n" +
-                            "first object has %d seconds, second object has %d seconds\n\n",
-                    firstTimeInterval.getAmountOfSeconds(), secondTimeInterval.getAmountOfSeconds());
-        } else System.out.printf("Objects are different and have different amount of seconds\n" +
-                "first object has %d seconds, second object has %d seconds\n\n",
-                firstTimeInterval.getAmountOfSeconds(), secondTimeInterval.getAmountOfSeconds());
+    void equals (TimeInterval timeInterval) {
+        if (this.getAmountOfSeconds() == timeInterval.getAmountOfSeconds()) {
+            System.out.printf("Objects have same amount of seconds\n" +
+                    "first object has %d seconds, second object has %d seconds\n\n",
+                    this.getAmountOfSeconds(), timeInterval.getAmountOfSeconds());
+        } else
+            System.out.printf("Objects have different amount of seconds\n" +
+                    "first object has %d seconds, second object has %d seconds\n\n",
+                    this.getAmountOfSeconds(), timeInterval.getAmountOfSeconds());
     }
 
     @Override
