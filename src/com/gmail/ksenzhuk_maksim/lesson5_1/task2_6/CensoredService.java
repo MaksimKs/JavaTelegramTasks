@@ -7,7 +7,7 @@ public class CensoredService {
 
     private String stringForCensored = "Напишите метод, заменяющий в тексте слово бяка \n" +
             "на другое слово даже если это слово с большой \n" +
-            "буквы Бяка и в рахных регистрах бяКа БЯка БЯКА.";
+            "буквы Бяка и в разных регистрах бяКа БЯка БЯКА.";
 
     public String getStringForCensored(){
         return stringForCensored;
