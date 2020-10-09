@@ -5,7 +5,7 @@ import java.util.Iterator;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
-public class StudentsMarksLs {
+public class StudentsMarksService {
 
     private ArrayList<Integer> arrayList;
 
@@ -13,7 +13,7 @@ public class StudentsMarksLs {
         return arrayList;
     }
 
-    public StudentsMarksLs() {
+    public StudentsMarksService() {
         this.arrayList = createListWithMarks();
     }
 

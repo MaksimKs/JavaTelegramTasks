@@ -7,9 +7,9 @@ package com.gmail.ksenzhuk_maksim.task2;
 public class MainStudentsMarks {
     public static void main(String [] args) {
 
-        StudentsMarksLs studentsMarksLs = new StudentsMarksLs();
-        System.out.println("Print list of marks: " + studentsMarksLs.getArrayList());
+        StudentsMarksService studentsMarksService = new StudentsMarksService();
+        System.out.println("Print list of marks: " + studentsMarksService.getArrayList());
 
-        System.out.println("Max mark in list is: " + studentsMarksLs.findMaxMarkInLs(studentsMarksLs.getArrayList()));
+        System.out.println("Max mark in list is: " + studentsMarksService.findMaxMarkInLs(studentsMarksService.getArrayList()));
     }
 }
