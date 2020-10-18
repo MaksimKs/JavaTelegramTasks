@@ -7,7 +7,7 @@ import java.util.Map;
 public class MainFrequencyDictionary {
     public static void main(String[] args) {
 
-        String text = "It contained a few dollars, a two credit cards, " +
+        String text = "It contained- a few dollars, a two credit cards, " +
                 "a two business cards and two pictures, one a duplicate " +
                 "of the family pictures and other a school pictures";
 

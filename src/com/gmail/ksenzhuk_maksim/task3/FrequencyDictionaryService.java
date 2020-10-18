@@ -25,7 +25,7 @@ public class FrequencyDictionaryService {
 
     //convert string to list
     List<String> convertStringToList(String stringForDictionary) {
-        Pattern pattern = Pattern.compile(",?\\s");
+        Pattern pattern = Pattern.compile("[,.:\\-]?\\s");
         String[] array = pattern.split(stringForDictionary);
 
         return Arrays.asList(array);
