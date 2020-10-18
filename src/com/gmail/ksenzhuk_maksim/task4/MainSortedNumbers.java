@@ -16,7 +16,7 @@ public class MainSortedNumbers {
         }
 
         List<Integer> listForSorting = listNumbersInit.getList();
-        Collections.sort(listForSorting, new NumbersComparatorService());
+        listForSorting.sort(new NumbersComparatorService());
         System.out.println("\nList after sort:");
         listForSorting.forEach(element -> System.out.print(element + "; "));
 
