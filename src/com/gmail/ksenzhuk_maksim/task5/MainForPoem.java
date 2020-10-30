@@ -12,7 +12,6 @@ public class MainForPoem {
         poemService.initList(pathToFile);
         poemService.printList(poemService.getList());
 
-
         System.out.println("\n************************\n" +
                 "Print poem after sorting:");
         poemService.printList(poemService.initListForSort(poemService.getList()));
